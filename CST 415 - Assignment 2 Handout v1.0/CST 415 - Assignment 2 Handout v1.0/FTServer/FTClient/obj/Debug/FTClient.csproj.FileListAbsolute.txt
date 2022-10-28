@@ -1,0 +1,11 @@
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\FTClient.exe.config
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\FTClient.exe
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\FTClient.pdb
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\PRSLib.dll
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\PRSLib.pdb
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.AssemblyReference.cache
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.SuggestedBindingRedirects.cache
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.CoreCompileInputs.cache
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.CopyComplete
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.exe
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.pdb

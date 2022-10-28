@@ -1,0 +1,11 @@
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSTestClient.exe.config
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSTestClient.exe
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSTestClient.pdb
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSLib.dll
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\bin\Debug\PRSLib.pdb
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.csproj.AssemblyReference.cache
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.csproj.SuggestedBindingRedirects.cache
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.csproj.CoreCompileInputs.cache
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.csproj.CopyComplete
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.exe
+C:\OIT Work\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\PRSServer\PRSTestClient\obj\Debug\PRSTestClient.pdb
