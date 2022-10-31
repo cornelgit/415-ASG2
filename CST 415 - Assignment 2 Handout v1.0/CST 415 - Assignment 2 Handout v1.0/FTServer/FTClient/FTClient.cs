@@ -80,15 +80,14 @@ namespace FTClient
 
         public void GetDirectory(string directoryName)
         {
-            // TODO: FTClient.GetDirectory()
-
             // send get to the server for the specified directory and receive files
             if (connected)
             {
                 // send get command for the directory
-                
+                SendGet(directoryName);
+
                 // receive and process files
-                
+                while (ReceiveFile(directoryName)) ;
             }
         }
 
@@ -96,9 +95,11 @@ namespace FTClient
 
         private void SendGet(string directoryName)
         {
-            // TODO: FTClient.SendGet()
             // send get message for the directory
-
+            writer.WriteLine("get");
+            writer.WriteLine(directoryName);
+            writer.Flush();
+            Console.WriteLine("Sent get to server for directory: " + directoryName);
         }
 
         private void SendExit()
@@ -117,34 +118,63 @@ namespace FTClient
 
         private bool ReceiveFile(string directoryName)
         {
-            // TODO: FTClient.ReceiveFile()
             // receive a single file from the server and save it locally in the specified directory
 
             // expect file name from server
+            string fileName = reader.ReadLine();
 
             // when the server sends "done", then there are no more files!
-
-            // handle error messages from the server
-
-            // received a file name
-
-            // receive file length from server
-
-            // receive file contents
-
-            // loop until all of the file contenst are received
-            //while (charsToRead > 0)
+            if (fileName == "done")
             {
-                // receive as many characters from the server as available
-
-                // accumulate bytes read into the contents
-
+                Console.WriteLine("Received done from server!");
+                return false;
+            }
+            else if (fileName == "error")
+            {
+                // handle error messages from the server
+                string errorMsg = reader.ReadLine();
+                Console.WriteLine("Error from server: " + errorMsg);
+                return false;
             }
 
+            // received a file name
+            // receive file length from server
+            int fileLength = int.Parse(reader.ReadLine());
+            Console.WriteLine("Receiving file " + fileName + ", " + fileLength.ToString() + " bytes long");
+
+            // receive file contents
+            int charsToRead = fileLength;
+            string fileContents = "";
+
+            // loop until all of the file contenst are received
+            while (charsToRead > 0)
+            {
+                // receive as many characters from the server as available
+                char[] buffer = new char[charsToRead];
+                int charsRead = reader.Read(buffer, 0, charsToRead);
+                string stringRead = new string(buffer);
+
+                // accumulate bytes read into the contents
+                charsToRead -= charsRead;
+                fileContents += stringRead;
+            }
+            Console.WriteLine("Received " + fileLength.ToString() + " bytes: " + fileContents);
+
             // create the local directory if needed
-            
+            DirectoryInfo di = new DirectoryInfo(directoryName);
+
+            if (!di.Exists)
+            {
+                di.Create();
+            }
+
             // save the file locally on the disk
-            
+            string filePath = Path.Combine(directoryName, fileName);
+            StreamWriter writer = File.CreateText(filePath);
+            writer.Write(fileContents);
+            writer.Close();
+
+            // we downloaded a file!
             return true;
         }
 

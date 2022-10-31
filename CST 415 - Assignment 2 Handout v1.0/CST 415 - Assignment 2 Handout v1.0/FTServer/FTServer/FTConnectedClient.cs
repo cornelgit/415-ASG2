@@ -77,24 +77,62 @@ namespace FTServer
                 {
                     // receive a message from the client
                     string msg = reader.ReadLine();
+                    Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "Client msg: " + msg);
 
                     // handle the message
                     if (msg == "get")
                     {
-                        // TODO: get directoryName
+                        // get directoryName
+                        string directoryName = reader.ReadLine();
+                        Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "directory name: " + directoryName);
 
                         // retrieve directory contents and sending all the files
-
                         // if directory does not exist! send an error!
+                        DirectoryInfo di = new DirectoryInfo(directoryName);
 
-                        // if directory exists, send each file to the client
-                        // for each file...
-                        // get the file's name
-                        // make sure it's a txt file
-                        // get the file contents
-                        // send a file to the client
-                        // send done after last file
-                        done = true;
+                        if (!di.Exists)
+                        {
+                            SendError("Directory does not exist!");
+                        }
+                        else
+                        {
+                            // if directory exists, send each file to the client
+
+                            try
+                            {
+                                // for each file...
+                                foreach (FileInfo fi in di.GetFiles())
+                                {
+                                    // get the file's name
+                                    string fileName = fi.Name;
+
+                                    // make sure it's a txt file
+                                    if (fi.Extension == ".txt")
+                                    {
+                                        Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "found txt file: " + fileName);
+
+                                        // get the file contents
+                                        string fileContents = fi.OpenText().ReadToEnd();
+
+                                        // send a file to the client
+                                        SendFileName(fileName, fileContents.Length);
+                                        SendFileContents(fileContents);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "file not txt: " + fileName);
+                                    }
+                                }
+
+                                // send done after last file
+                                SendDone();
+                            }
+                            catch (Exception ex)
+                            {
+                                SendError(ex.Message);
+                                Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "unexpected fatal error: " + ex.Message);
+                            }
+                        }
                     }
 
                     else if (msg == "exit")
@@ -106,11 +144,11 @@ namespace FTServer
                     
                     else
                     {
-                        // TODO: error handling for an invalid message
-                        
+                        // error handling for an invalid message
+
                         // this client is too broken to waste our time on!
                         // quite processing messages and disconnect
-                        
+                        SendError("Invalid message!");
                     }
                 }
             }
@@ -128,31 +166,37 @@ namespace FTServer
 
         private void SendFileName(string fileName, int fileLength)
         {
-            // TODO: FTConnectedClient.SendFileName()
             // send file name and file length message
-
+            writer.WriteLine(fileName);
+            writer.WriteLine(fileLength.ToString());
+            writer.Flush();
+            Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "Sent file name/length to client: " + fileName + " / " + fileLength.ToString());
         }
 
         private void SendFileContents(string fileContents)
         {
-            // TODO: FTConnectedClient.SendFileContents()
             // send file contents only
             // NOTE: no \n at end of contents
-
+            writer.Write(fileContents);
+            writer.Flush();
+            Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "Sent contents to client: " + fileContents.Length.ToString() + " bytes");
         }
 
         private void SendDone()
         {
-            // TODO: FTConnectedClient.SendDone()
             // send done message
-
+            writer.WriteLine("done");
+            writer.Flush();
+            Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "Sent done to client!");
         }
 
         private void SendError(string errorMessage)
         {
-            // TODO: FTConnectedClient.SendError()
             // send error message
-
+            writer.WriteLine("error");
+            writer.WriteLine(errorMessage);
+            writer.Flush();
+            Console.WriteLine("[" + clientThread.ManagedThreadId.ToString() + "] " + "Sent error to client: " + errorMessage);
         }
     }
 }

@@ -34,7 +34,61 @@ namespace FTClient
             ushort FTSERVER_PORT = 40000;
             string DIRECTORY_NAME = null;
 
-            // TODO: process the command line arguments
+            // process the command line arguments
+            try
+            {
+
+                for (int i = 0; i < args.Length; i++)
+                {
+                    if (args[i] == "-prs")
+                    {
+                        if (i + 1 < args.Length)
+                        {
+                            // split serverIP:port
+                            string[] parts = args[++i].Split(':');
+                            PRSSERVER_IPADDRESS = parts[0];
+                            PRSSERVER_PORT = ushort.Parse(parts[1]);
+                        }
+                        else
+                        {
+                            throw new Exception("-prs requires a value!");
+                        }
+                    }
+                    else if (args[i] == "-s")
+                    {
+                        if (i + 1 < args.Length)
+                        {
+                            FTSERVER_IPADDRESS = args[++i];
+                        }
+                        else
+                        {
+                            throw new Exception("-s requires a value!");
+                        }
+                    }
+                    else if (args[i] == "-d")
+                    {
+                        if (i + 1 < args.Length)
+                        {
+                            DIRECTORY_NAME = args[++i];
+                        }
+                        else
+                        {
+                            throw new Exception("-d requires a value!");
+                        }
+                    }
+                    else
+                    {
+                        // error! unexpected cmd line arg
+                        throw new Exception("Invalid cmd line arg: " + args[i]);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error! " + ex.Message);
+                return;
+            }
 
             // print current parameters
             Console.WriteLine("PRS Address: " + PRSSERVER_IPADDRESS);
@@ -52,7 +106,8 @@ namespace FTClient
                 FTClient ft = new FTClient(FTSERVER_IPADDRESS, FTSERVER_PORT);
                 ft.Connect();
 
-                // TODO: get the contents of the specified directory
+                // get the contents of the specified directory
+                ft.GetDirectory(DIRECTORY_NAME);
 
                 // disconnect from the server
                 ft.Disconnect();
