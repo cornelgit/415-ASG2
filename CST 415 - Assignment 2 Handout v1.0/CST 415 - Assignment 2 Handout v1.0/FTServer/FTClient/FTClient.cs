@@ -57,8 +57,6 @@ namespace FTClient
 
         public void Disconnect()
         {
-            // TODO: FTClient.Disconnect()
-
             if (connected)
             {
                 // send exit to FT server
@@ -86,6 +84,8 @@ namespace FTClient
                 // send get command for the directory
                 SendGet(directoryName);
 
+                //SendInvalidMessage();  // uncomment only for testing server error handling
+
                 // receive and process files
                 while (ReceiveFile(directoryName)) ;
             }
@@ -111,9 +111,9 @@ namespace FTClient
 
         private void SendInvalidMessage()
         {
-            // TODO: FTClient.SendInvalidMessage()
             // allows for testing of server's error handling code
-
+            writer.WriteLine("invalid");
+            writer.Flush();
         }
 
         private bool ReceiveFile(string directoryName)

@@ -38,7 +38,7 @@ namespace FTServer
             // set the socket to listen
             listeningSocket.Listen(clientBacklog);
             
-            // TODO: how does done get set to true?
+            // note: this server runs until process is killed by the OS
             bool done = false;
             while (!done)
             {

@@ -24,8 +24,6 @@ namespace FTClient
 
         static void Main(string[] args)
         {
-            // TODO: FTClientProgram.Main()
-
             // defaults
             string PRSSERVER_IPADDRESS = "127.0.0.1";
             ushort PRSSERVER_PORT = 30000;

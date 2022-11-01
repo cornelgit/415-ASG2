@@ -20,3 +20,14 @@ C:\Users\C0rnel\Desktop\OIT415ASG2\415-ASG2\CST 415 - Assignment 2 Handout v1.0\
 C:\Users\C0rnel\Desktop\OIT415ASG2\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.CopyComplete
 C:\Users\C0rnel\Desktop\OIT415ASG2\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.exe
 C:\Users\C0rnel\Desktop\OIT415ASG2\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.pdb
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\FTClient.exe.config
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\FTClient.exe
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\FTClient.pdb
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\PRSLib.dll
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\bin\Debug\PRSLib.pdb
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.AssemblyReference.cache
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.SuggestedBindingRedirects.cache
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.CoreCompileInputs.cache
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.csproj.CopyComplete
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.exe
+C:\OITWORK\415-ASG2\CST 415 - Assignment 2 Handout v1.0\CST 415 - Assignment 2 Handout v1.0\FTServer\FTClient\obj\Debug\FTClient.pdb

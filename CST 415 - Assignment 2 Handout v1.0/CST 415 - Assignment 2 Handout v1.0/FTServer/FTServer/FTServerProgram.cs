@@ -27,7 +27,39 @@ namespace FTServer
             ushort PRS_PORT = 30000;
             string SERVICE_NAME = "FT Server";
 
-            // TODO: process the command line arguments to get the PRS ip address and PRS port number
+            // process the command line arguments to get the PRS ip address and PRS port number
+            try
+            {
+
+                for (int i = 0; i < args.Length; i++)
+                {
+                    if (args[i] == "-prs")
+                    {
+                        if (i + 1 < args.Length)
+                        {
+                            // split serverIP:port
+                            string[] parts = args[++i].Split(':');
+                            PRS_ADDRESS = parts[0];
+                            PRS_PORT = ushort.Parse(parts[1]);
+                        }
+                        else
+                        {
+                            throw new Exception("-prs requires a value!");
+                        }
+                    }
+                    else
+                    {
+                        // error! unexpected cmd line arg
+                        throw new Exception("Invalid cmd line arg: " + args[i]);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error! " + ex.Message);
+                return;
+            }
 
             // print current parameters
             Console.WriteLine("PRS Address: " + PRS_ADDRESS);
